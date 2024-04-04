@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+import { userRoute } from './routes/userRoute';
 
 dotenv.config();
 
@@ -16,3 +17,5 @@ app.use(cors());
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+app.use('/api/user',userRoute)
